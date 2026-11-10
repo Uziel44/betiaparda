@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diario fin del mundo — poemas de Waldo Orozco</title>
+<meta name="description" content="Poemas de Waldo Orozco, desde 2008: un camino largo sobre lo que se carga, lo que se suelta y lo que se sigue caminando.">
+<meta name="theme-color" content="#EDF1F6">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#poemas">Saltar al contenido</a>
+<div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
+
+<nav data-header data-scrolled="false" aria-label="Principal">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#inicio">Este perro que ladra
+      <span>Diario fin del mundo</span>
+    </a>
+    <div class="nav-links">
+      <a data-nav-link href="#poemas">Poemas</a>
+      <a data-nav-link href="#camino">Archivo</a>
+      <a data-nav-link href="#sobre">Sobre</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="inicio" data-hero>
+  <div class="wrap hero-grid">
+    <div class="hero-content">
+    <p class="hero-eyebrow" data-hero-item>Waldo Orozco · poemas, desde 2008</p>
+    <h1 data-hero-item>Diario fin del mundo</h1>
+    <p class="hero-sub" data-hero-item>No hay apocalipsis acá: hay un camino largo, con tramos de barro y tramos de altura. Poemas sobre lo que se carga, lo que se suelta y lo que se sigue caminando.</p>
+  </div>
+    <div class="hero-media">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="hero.jpg" aria-label="Lobos aullando sobre la nieve" data-hero-video>
+      <source src="banner.mp4" type="video/mp4">
+    </video>
+    </div>
+  </div>
+</header>
+
+<section id="destacados">
+  <div class="wrap">
+    <div class="section-head" data-reveal="up">
+      <h2>Piedras del camino</h2>
+      <p>Cinco paradas para empezar, elegidas entre más de quinientos poemas.</p>
+    </div>
+
+    <svg class="trail-path" viewBox="0 0 1000 14" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,7 L1000,7" stroke="#DDD4C0" stroke-width="1.5" stroke-dasharray="1 7" stroke-linecap="round"/>
+    </svg>
+
+    <div class="poem-row" data-reveal-group="up">
+      <a class="poem-stone" data-reveal href="#" data-title="Pequeños pecados">
+        <span class="stone-marker"></span>
+        <span class="stone-date">Octubre 2026</span>
+        <span class="stone-title">Pequeños pecados</span>
+        <span class="stone-frag">una cadena que se arrastra, heredada</span>
+      </a>
+      <a class="poem-stone" data-reveal href="#" data-title="Carmín">
+        <span class="stone-marker"></span>
+        <span class="stone-date">Agosto 2026</span>
+        <span class="stone-title">Carmín</span>
+        <span class="stone-frag">el primer amor nunca se olvida</span>
+      </a>
+      <a class="poem-stone" data-reveal href="#" data-title="Huecos en la memoria...">
+        <span class="stone-marker"></span>
+        <span class="stone-date">Marzo 2026</span>
+        <span class="stone-title">Huecos en la memoria</span>
+        <span class="stone-frag">huecos entre nosotros</span>
+      </a>
+      <a class="poem-stone" data-reveal href="#" data-title="Crazy II">
+        <span class="stone-marker"></span>
+        <span class="stone-date">Febrero 2026</span>
+        <span class="stone-title">Crazy II</span>
+        <span class="stone-frag">voy quemando locura</span>
+      </a>
+      <a class="poem-stone" data-reveal href="#" data-title="En otra vida">
+        <span class="stone-marker"></span>
+        <span class="stone-date">Enero 2026</span>
+        <span class="stone-title">En otra vida</span>
+        <span class="stone-frag">recuerdos olvidados, desde mundos ya lejanos</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="poemas">
+  <div class="wrap">
+    <div class="section-head" data-reveal="up">
+      <h2>Poemas, completos</h2>
+      <p>Los diecinueve poemas de 2023 a 2026, tal cual se publicaron en el blog.</p>
+    </div>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<section id="camino">
+  <div class="wrap">
+    <div class="section-head" data-reveal="up">
+      <h2>El camino, año por año</h2>
+      <p>Diecinueve años de subida. El tamaño de cada año muestra cuánto se escribió.</p>
+    </div>
+
+    <div class="years-scroll">
+      <div class="years-row" id="yearsRow" role="tablist" aria-label="Años del archivo"></div>
+    </div>
+
+    <div class="year-panel" id="yearPanel" hidden>
+      <div class="year-panel-head">
+        <span class="big-year" id="panelYear"></span>
+        <span class="meta" id="panelMeta"></span>
+      </div>
+      <ul class="poem-list" id="panelList"></ul>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="wrap about-grid" data-reveal="up">
+    <div>
+      <h2>Sobre el perro que ladra</h2>
+      <p>A los seis años este perro sintió la necesidad de ladrar, sin morder. Y lo hizo igual: ladró y mordió, sobre todo en noches de luna llena, a las sombras, a los gatos, a los desconocidos.</p>
+      <p>Hoy ladra con sentido, como un perro con experiencia. A veces aúlla en vez de ladrar. A veces solo mueve la cola, con una sonrisa enorme.</p>
+      <a class="about-social" href="https://www.instagram.com/la_bestiaparda" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/>
+        </svg>
+        Waldo Orozco
+      </a>
+    </div>
+    <dl class="about-fact">
+      <dt>Primer poema</dt>
+      <dd>Febrero 2008</dd>
+      <dt>Último poema</dt>
+      <dd>Octubre 2026</dd>
+      <dt>Año más intenso</dt>
+      <dd>2017 · 192 poemas</dd>
+      <dt>Lugar</dt>
+      <dd>Villa Unión, La Rioja</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Diario fin del mundo — poemas de Waldo Orozco · <span data-current-year></span></div>
+</footer>
+
+<button class="scroll-top" type="button" data-scroll-top data-visible="false" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<dialog class="reader" id="reader" aria-labelledby="readerTitle">
+  <button class="reader-close" type="button" id="readerClose" aria-label="Cerrar">&times;</button>
+  <div class="reader-inner">
+    <p class="reader-date" id="readerDate"></p>
+    <h3 id="readerTitle"></h3>
+    <div class="reader-text" id="readerText"></div>
+    <a class="reader-src" id="readerSrc" href="#" target="_blank" rel="noopener">Ver en el blog original</a>
+  </div>
+</dialog>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
