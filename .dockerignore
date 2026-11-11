@@ -1,0 +1,12 @@
+.git
+.gitignore
+.gitattributes
+.dockerignore
+Dockerfile
+**/node_modules
+server/.env
+server/data
+**/*.md
+Recording *.mp4
+Asi suena*.mp4
+Wolf Running*.mp4

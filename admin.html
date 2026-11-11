@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Panel — Diario fin del mundo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">Diario fin del mundo <span>Panel de Waldo</span></div>
+    <div class="top-actions">
+      <a class="link" href="/" target="_blank" rel="noopener">Ver la web</a>
+      <button class="btn ghost" id="logout" type="button" hidden>Salir</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ENTRAR -->
+  <section id="login" class="login-box">
+    <h1>Entrar</h1>
+    <form id="login-form" autocomplete="on">
+      <label for="login-user">Usuario</label>
+      <input id="login-user" name="usuario" type="text" autocomplete="username" autocapitalize="none" required>
+      <label for="login-pass">Contraseña</label>
+      <input id="login-pass" name="password" type="password" autocomplete="current-password" required>
+      <p class="msg" id="login-msg" role="alert"></p>
+      <button class="btn" id="login-send" type="submit">Entrar</button>
+    </form>
+  </section>
+
+  <!-- PESTAÑAS -->
+  <nav id="tabs" class="tabs" aria-label="Secciones del panel" hidden>
+    <button class="tab" id="tab-poemas" type="button" aria-pressed="true">Tarjetas</button>
+    <button class="tab" id="tab-metricas" type="button" aria-pressed="false">Métricas</button>
+  </nav>
+
+  <!-- PANEL 1: TARJETAS -->
+  <section id="panel" hidden>
+    <div class="bar">
+      <h2>Tarjetas de poemas</h2>
+      <button class="btn" id="nuevo" type="button">+ Nuevo poema</button>
+    </div>
+    <p class="muted" id="loading">Cargando…</p>
+    <p class="muted" id="empty" hidden>Todavía no hay poemas. Crea el primero con “Nuevo poema”.</p>
+    <ul class="cards" id="list"></ul>
+    <p class="sr" id="aviso" role="status" aria-live="polite"></p>
+  </section>
+
+  <!-- PANEL 2: MÉTRICAS -->
+  <section id="panel-metricas" hidden>
+    <div class="bar">
+      <h2>Métricas <span class="muted small">últimos 30 días</span></h2>
+      <button class="btn ghost" id="metricas-refresh" type="button">Actualizar</button>
+    </div>
+    <p class="muted" id="metricas-loading" hidden>Cargando…</p>
+    <p class="msg" id="metricas-msg" role="alert"></p>
+    <div id="metricas-cuerpo"></div>
+  </section>
+
+</main>
+
+<!-- EDITOR -->
+<dialog id="editor" class="dlg" aria-labelledby="editor-titulo">
+  <form id="editor-form" method="dialog" novalidate>
+    <h2 id="editor-titulo">Poema</h2>
+
+    <label for="f-titulo">Título</label>
+    <input id="f-titulo" type="text" maxlength="120" required>
+
+    <label for="f-fecha">Fecha</label>
+    <input id="f-fecha" type="date" required>
+
+    <label for="f-texto">Poema</label>
+    <textarea id="f-texto" rows="12" required></textarea>
+
+    <label for="f-enlace">Enlace al blog <span class="muted small">(opcional)</span></label>
+    <input id="f-enlace" type="url" placeholder="https://cosasdeunperro.blogspot.com/…">
+
+    <label>Imagen <span class="muted small">(opcional)</span></label>
+    <div class="photo">
+      <div class="photo-preview" id="photo-preview" aria-hidden="true"></div>
+      <div class="photo-actions">
+        <label class="btn ghost file" for="f-foto">Subir imagen</label>
+        <input id="f-foto" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+        <button class="btn ghost" id="foto-quitar" type="button">Quitar</button>
+        <p class="muted small" id="foto-msg"></p>
+      </div>
+    </div>
+
+    <label class="check"><input id="f-visible" type="checkbox" checked> Visible en la web</label>
+
+    <p class="msg" id="editor-msg" role="alert"></p>
+    <div class="dlg-actions">
+      <button class="btn ghost" id="editor-cancelar" type="button">Cancelar</button>
+      <button class="btn" id="editor-guardar" type="submit">Guardar</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- CONFIRMAR BORRADO -->
+<dialog id="confirm" class="dlg small-dlg" aria-labelledby="confirm-msg">
+  <p id="confirm-msg"></p>
+  <div class="dlg-actions">
+    <button class="btn ghost" id="confirm-no" type="button">Cancelar</button>
+    <button class="btn danger" id="confirm-si" type="button">Eliminar</button>
+  </div>
+</dialog>
+
+<script src="admin.js" defer></script>
+</body>
+</html>
